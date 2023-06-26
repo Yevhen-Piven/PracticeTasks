@@ -2,31 +2,26 @@ package ua.com.yevhenpiven;
 
 public class Main {
 
-	public static void main(String[] args) {		
-		// max value of massive
-		int arrMax []= {-23,-21,-85,-45,-54};
-		int aMax=arrMax[0];
-		for(int i:arrMax) {
-			if(i>aMax)
-				aMax=i;}
-		System.out.println(aMax);
-		//min of massive
-		int arrMin []= {23,2,-85,0,-28};
-		int aMin=arrMin[0];
-		for(int i:arrMin) {
-			if(i<aMin)
-				aMin=i;}
-		System.out.println(aMin);		
-		//average value of massive
-		Integer aAverage=0;
-		int arrAverage[]= {1,0,2,45,3,3};
-		for(int i:arrAverage) {
-			aAverage=aAverage+i;}
-		System.out.println(aAverage.floatValue()/arrAverage.length);			
-	}
-	
-	
-	
-	
+	public static void main(String[] args) {
+		// method sorted array from small to large
+		for (int i : buble_sort(new int[] { 12, -45, 0, 145, -85, -12, 14, -2859 }))
+			System.out.println(i);
 
+	}
+
+	public static int[] buble_sort(int[] arr) {
+
+		for (int i = 0; i < arr.length; i++) {
+			int a = 0;
+			for (int j = 0; j < arr.length - 1; j++) {
+
+				if (arr[j] > arr[j + 1]) {
+					a = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = a;
+				}
+			}
+		}
+		return arr;
+	}
 }
